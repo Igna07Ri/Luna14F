@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi San Valentín?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffebee;
+            color: #c62828;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #c62828;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #b71c1c;
+        }
+        .hidden {
+            display: none;
+        }
+        .heart {
+            font-size: 5em;
+            color: #c62828;
+            animation: beat 1s infinite;
+        }
+        @keyframes beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Hola, mi princesa!</h1>
+    <p>¿Serias mi San Valentín este año?</p>
+    <button onclick="mostrarRespuesta('si')">Sí</button>
+    <button onclick="mostrarRespuesta('no')">No</button>
+
+    <div id="respuesta-si" class="hidden">
+        <p class="heart">❤️</p>
+        <p>¡Gracias por aceptar! Te quiero mucho. 💕</p>
+    </div>
+
+    <div id="respuesta-no" class="hidden">
+        <p class="heart">:(</p>
+        <p>¡Oh no! Espero que cambies de opinión :( 💔</p>
+    </div>
+
+    <script>
+        function mostrarRespuesta(opcion) {
+            if (opcion === 'si') {
+                document.getElementById('respuesta-si').classList.remove('hidden');
+                document.getElementById('respuesta-no').classList.add('hidden');
+            } else if (opcion === 'no') {
+                document.getElementById('respuesta-no').classList.remove('hidden');
+                document.getElementById('respuesta-si').classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
